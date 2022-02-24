@@ -3,6 +3,9 @@ from os import getcwd
 from os import chdir
 from os.path import isfile
 from os.path import abspath
+from project_functions import python_structure
+from project_functions import converter
+
 
 current_folder = getcwd()
 foldername = input("Vous etes dans le dossier "+ current_folder + "\nEntrer le chemin du dossier ou on doit chercher les fichiers: ")
@@ -47,6 +50,7 @@ while output_extent not in extents:
     print("Choisir le bon format de fichier: ")
     output_extent = input()
 
-
+pdata = python_structure(myfiles[choice - 1])
+converter(pdata, choice_name, output_extent)
 # print(myfiles)
 # print(extents)

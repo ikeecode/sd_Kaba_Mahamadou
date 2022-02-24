@@ -9,6 +9,8 @@ from csv import DictWriter as csv_write
 from xmltodict import parse
 from dicttoxml import dicttoxml as dtx
 
+
+# fonction permettant de lire un fichier avec une extension donnée et de le mettre sous format dico en python
 def python_structure(file):
     reader = ''
     with open(file, 'r') as thefile:
@@ -33,8 +35,9 @@ def python_structure(file):
         return reader
 
 
-def converter(pdata, extent):
-    with open('new_file.' + extent, 'w') as target:
+# fonction permettant de convertir un dico en un format fichier de donnée en parametre
+def converter(pdata, name, extent):
+    with open(f'{name}.{extent}', 'w') as target:
         if extent == 'json':
             jdump(dumps(pdata), target)
         elif extent == 'yaml' or extent == 'yml':
@@ -51,3 +54,7 @@ def converter(pdata, extent):
         elif extent == 'xml':
             xml = dtx(pdata)
             target.write(str(xml, 'utf-8'))
+        else:
+            print("Ce format de fichier n'est pas pris en compte !")
+
+    print(f"{name}.{extent} est créé avec succès ! " )
