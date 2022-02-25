@@ -14,12 +14,12 @@ try:
 except FileNotFoundError:
     print("Ce dossier n'existe pas !")
 
-extents = ['json', 'xml', 'yaml', 'yml', 'csv']
+extents = ['json', 'xml', 'csv', 'yaml', 'yml']
 myfiles = []
 for file in listdir('.'):
-    extension = file.split('.')[-1]
-    if extension in ['json', 'xml', 'yaml', 'yml', 'csv']:
-        if isfile(abspath(file)):
+    if isfile(abspath(file)):
+        extension = file.split('.')[-1]
+        if extension in ['json', 'xml', 'yaml', 'yml', 'csv']:
             myfiles.append(file)
 
 print()
