@@ -36,7 +36,7 @@ def construct_button(pdata, choice_name, extent):
 def recup_file():
     file = askopenfilename(title='Ouvrir file',
                        filetypes=[("files",".xml .json .yml .yaml .csv")],
-                       initialdir=str(Path.home()) + '/Bureau/')
+                       initialdir=str(Path.home()))
 
     extents = ['json', 'xml', 'csv', 'yaml', 'yml']
     chemin_file = abspath(file)
