@@ -65,3 +65,5 @@ output_line = Label(root, text='', anchor='w', justify='left')
 
 filing.grid(row=1, column=1)
 filing_btn.grid(row=2, column=1)
+
+root.mainloop()
